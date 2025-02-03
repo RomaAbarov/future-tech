@@ -1,0 +1,42 @@
+.summary {
+  &--2-cols {
+    .summary {
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+
+        @include laptop {
+          row-gap: 20px;
+        }
+      }
+
+      &__item {
+        &--wide {
+          grid-column: -1/1;
+          row-gap: fluid(16, 10);
+
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: fluid(50, 20);
+  }
+
+  &__item {
+    display: grid;
+    row-gap: 4px;
+
+    @include laptop {
+      row-gap: 2px;
+    }
+  }
+
+  &__value {
+    color: var(--color-light);
+  }
+}

@@ -1,0 +1,28 @@
+.header {
+  &__overlay {
+    @include mobile-above {
+      display: contents;
+    }
+
+    @include mobile {
+      position: fixed;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 3rem;
+
+      inset: 0;
+      padding: 1rem;
+      background-color: var(--color-dark-10);
+
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+
+        translate: 100%;
+      }
+    }
+  }
+}

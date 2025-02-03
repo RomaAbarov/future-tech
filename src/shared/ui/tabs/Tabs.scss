@@ -1,0 +1,25 @@
+.tabs {
+  &__header {
+    border-bottom: var(--border);
+
+    @include tablet {
+      overflow-x: auto;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+
+    padding-block: fluid(50, 20);
+
+    @include laptop {
+      column-gap: 14px;
+    }
+
+    @include tablet {
+      width: max-content;
+    }
+  }
+}

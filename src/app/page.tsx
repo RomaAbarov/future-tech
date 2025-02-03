@@ -1,95 +1,121 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { Suspense } from "react";
+import { Metrics } from "@/features/metrics";
+import { Team } from "@/shared/ui";
+import { ErrorTabSection, TabsSection } from "@/features/tabs";
+import { ErrorBoundary } from "react-error-boundary";
+import { Reviews } from "@/features/reviews";
+import { AdvantagesSection } from "@/widgets/advantages-section";
+import "./hero";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero__main container">
+          <div className="hero__body">
+            <p className="hero__subtitle">
+              Your Journey to Tomorrow Begins Here
+            </p>
+            <h1 className="hero__title" id="hero-title">
+              Explore the Frontiers of Artificial Intelligence
+            </h1>
+            <div className="hero__description">
+              <p>
+                Welcome to the epicenter of AI innovation. FutureTech AI News is
+                your passport to a world where machines think, learn, and
+                reshape the future. Join us on this visionary expedition into
+                the heart of AI.
+              </p>
+            </div>
+          </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          <div className="hero__metrics">
+            <Metrics className="full-vw-line full-vw-line--top full-vw-line--left" />
+          </div>
+
+          <div className="hero__resources-preview resources-preview">
+            <div className="resources-preview__team">
+              <Team />
+            </div>
+            <div className="resources-preview__body">
+              <p className="resources-preview__title h5">
+                Explore 1000+ resources
+              </p>
+              <p className="resources-preview__subtitle">
+                Over 1,000 articles on emerging tech trends and breakthroughs.
+              </p>
+            </div>
+            <Link href="#" className="resources-preview__button button">
+              <span className="icon icon--yellow-arrow">Explore Resources</span>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <AdvantagesSection />
+      </section>
+
+      <section className="section" aria-labelledby="blog-title">
+        <header className="section__header">
+          <div className="section__header-inner container">
+            <div className="section__header-info">
+              <p className="section__subtitle tag">
+                A Knowledge Treasure Trove
+              </p>
+              <h2 className="section__title" id="blog-title">
+                Explore FutureTech's In-Depth Blog Posts
+              </h2>
+            </div>
+            <div className="section__actions">
+              <Link href="#" className="section__link button">
+                <span className="icon icon--yellow-arrow">View All Blogs</span>
+              </Link>
+            </div>
+          </div>
+        </header>
+        <div className="section__body tabs">
+          <ErrorBoundary FallbackComponent={ErrorTabSection}>
+            <Suspense fallback={<p className="h3">Loading...</p>}>
+              <TabsSection />
+            </Suspense>
+          </ErrorBoundary>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="reviews-title">
+        <header className="section__header">
+          <div className="section__header-inner container">
+            <div className="section__header-info">
+              <p className="section__subtitle tag">What Our Readers Say</p>
+              <h2 className="section__title" id="reviews-title">
+                Real Words from Real Readers
+              </h2>
+            </div>
+            <div className="section__actions">
+              <Link href="#" className="section__link button">
+                <span className="icon icon--yellow-arrow">
+                  View All Testimonials
+                </span>
+              </Link>
+            </div>
+          </div>
+        </header>
+        <div className="section__body">
+          <div className="container">
+            <ErrorBoundary
+              fallback={
+                <p className="h3">
+                  Failed to load reviews. Try reloading the page.
+                </p>
+              }
+            >
+              <Suspense fallback={<p className="h3">Loading...</p>}>
+                <Reviews />
+              </Suspense>
+            </ErrorBoundary>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

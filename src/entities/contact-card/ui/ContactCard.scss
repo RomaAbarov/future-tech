@@ -1,0 +1,19 @@
+.contacts-card {
+  display: grid;
+  row-gap: fluid(50, 20);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 15px;
+
+    @include laptop {
+      row-gap: 10px;
+    }
+
+    @include mobile {
+      padding-left: 50px;
+    }
+  }
+}

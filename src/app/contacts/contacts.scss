@@ -1,0 +1,58 @@
+.contacts {
+  &__header {
+    border-bottom: var(--border);
+  }
+}
+
+.accordion {
+  &__details {
+    &[open] {
+      .accordion__title {
+        &::before,
+        &::after {
+          background-color: var(--color-light);
+        }
+
+        &::after {
+          rotate: 0deg;
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    padding-right: 50px;
+    color: inherit;
+
+    &::before,
+    &::after {
+      @include abs-y;
+
+      content: "";
+      right: 0;
+
+      width: 16px;
+      height: 2px;
+      border-radius: 1rem;
+
+      background-color: var(--color-accent);
+      transition-duration: var(--transition-duration);
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+
+  &__content {
+    &-body {
+      --offsetTop: #{fluid(24, 16)};
+
+      margin-top: var(--offsetTop);
+      padding-top: var(--offsetTop);
+      border-top: var(--border);
+    }
+  }
+}

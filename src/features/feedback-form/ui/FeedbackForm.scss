@@ -1,0 +1,333 @@
+//для select shadcn
+// html body[data-scroll-locked] {
+//   --removed-body-scroll-bar-size: 0 !important;
+//   margin-right: 0 !important;
+// }
+
+.feedback-form {
+  display: grid;
+  gap: fluid(50, 20) 50px;
+
+  @include mobile-s-above {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__cell {
+    &--wide {
+      grid-column: -1/1;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+
+    @include mobile-s {
+      flex-direction: column;
+      align-items: stretch;
+      row-gap: 20px;
+    }
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 16px;
+
+  font-size: 18px;
+
+  color: var(--color-light);
+  font-weight: 600;
+
+  @include laptop {
+    row-gap: 12px;
+
+    font-size: 16px;
+  }
+
+  &__body {
+    display: flex;
+    column-gap: 16px;
+
+    width: 100%;
+
+    @include laptop {
+      column-gap: 12px;
+    }
+  }
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+
+  color: var(--color-light);
+
+  @include hover {
+    color: var(--color-accent);
+
+    .checkbox__input {
+      border-color: var(--color-accent);
+    }
+  }
+
+  @include laptop {
+    column-gap: 6px;
+  }
+
+  &__input {
+    --size: 28px;
+
+    @include square(var(--size));
+    @include flex-center();
+
+    appearance: none;
+    margin: 0;
+    padding-inline: 0;
+    border: var(--border);
+    border-radius: 4px;
+    background-color: var(--color-dark-10);
+
+    @include laptop {
+      --size: 24px;
+    }
+
+    &:user-invalid {
+      border-color: var(--color-red);
+    }
+
+    &:not(:checked) {
+      &::after {
+        @include hide;
+      }
+    }
+
+    &::after {
+      content: "✓";
+      color: var(--color-light);
+      transition-duration: var(--transition-duration);
+    }
+  }
+}
+
+// @keyframes fadeIn {
+//   from {
+//     scale: 0;
+//   }
+//   to {
+//     scale: 1;
+//   }
+// }
+
+// @keyframes fadeOut {
+//   from {
+//     scale: 1;
+//   }
+//   to {
+//     scale: 0;
+//   }
+// }
+
+// .select {
+//   &__button {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     column-gap: 6px;
+
+//     height: 67px;
+//     padding-inline: 20px;
+//     padding-block: 0;
+//     border: var(--border);
+//     border-radius: 8px;
+//     background-color: var(--color-dark-10);
+
+//     font-size: 18px;
+//     color: var(--color-light);
+
+//     @include hover {
+//       border-color: var(--color-accent);
+//     }
+
+//     @include laptop {
+//       column-gap: 4px;
+//     }
+
+//     &[data-state="open"] {
+//       svg {
+//         rotate: 180deg;
+//       }
+//     }
+//   }
+
+//   &__dropdown {
+//     display: flex;
+//     flex-direction: column;
+//     row-gap: 4px;
+
+//     min-width: 150px;
+//     max-width: 300px;
+//     max-height: 250px;
+//     padding: 4px;
+//     background-color: var(--color-dark-10);
+//     border: var(--border);
+//     border-radius: 6px;
+
+//     svg {
+//       display: none;
+//     }
+
+//     &[data-state="open"] {
+//       animation: fadeIn 0.2s;
+//     }
+
+//     //не работает
+//     &[data-state="closed"] {
+//       animation: fadeOut 0.2s;
+//     }
+//   }
+
+//   &__option {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     column-gap: 10px;
+
+//     padding: 10px;
+//     border: var(--border);
+//     border-radius: 6px;
+
+//     @include hover {
+//       color: var(--color-accent);
+//       background-color: var(--color-dark);
+//     }
+
+//     &:focus-visible {
+//       outline: none;
+//       border-color: var(--color-accent);
+//     }
+
+//     &[data-state="checked"] {
+//       color: var(--color-accent);
+//       border-color: var(--color-accent);
+//     }
+
+//     svg {
+//       display: initial;
+//     }
+//   }
+// }
+
+.PhoneInput {
+  --PhoneInput-color--focus: none;
+
+  column-gap: 16px;
+
+  width: 100%;
+
+  @include laptop {
+    column-gap: 12px;
+  }
+}
+
+.PhoneInputCountry {
+  justify-content: space-between;
+  column-gap: 6px;
+
+  height: 67px;
+  padding-inline: 20px;
+  border: var(--border);
+  border-radius: 8px;
+  background-color: var(--color-dark-10);
+  margin: 0;
+
+  @include hover {
+    border-color: var(--color-accent);
+  }
+
+  @include laptop {
+    height: 53px;
+    padding-inline: 16px;
+    border-radius: 6px;
+  }
+}
+
+.PhoneInputCountrySelect {
+  background-color: var(--color-dark-10);
+  color: var(--color-light);
+
+  option {
+    &[selected] {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.PhoneInputCountryIcon {
+  --PhoneInputCountryFlag-height: 1.9em;
+  --PhoneInputCountryFlag-aspectRatio: 1;
+  --PhoneInputCountryFlag-borderColor--focus: none;
+
+  &--border {
+    background-color: initial;
+    box-shadow: none;
+  }
+}
+
+.PhoneInputCountrySelectArrow {
+  --PhoneInputCountrySelectArrow-width: 0.5em;
+  --PhoneInputCountrySelectArrow-color--focus: var(--color-accent);
+
+  @include laptop {
+    //--PhoneInputCountrySelectArrow-width: 0.5em;
+  }
+}
+
+.PhoneInputInput {
+  width: 100%;
+  height: 67px;
+  padding-inline: 20px;
+  border: var(--border);
+  border-radius: 8px;
+  background-color: var(--color-dark-10);
+
+  color: var(--color-light);
+
+  @include hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow);
+  }
+
+  @include laptop {
+    height: 53px;
+    padding-inline: 16px;
+    border-radius: 6px;
+  }
+
+  &::placeholder {
+    color: var(--color-dark-40);
+  }
+
+  &:user-invalid {
+    border-color: var(--color-red);
+  }
+}
+
+.alert {
+  border: var(--border);
+  border-color: inherit;
+  border-radius: 6px;
+
+  &--error {
+    color: var(--color-red);
+  }
+
+  &--success {
+    color: green;
+  }
+}

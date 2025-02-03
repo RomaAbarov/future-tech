@@ -1,0 +1,43 @@
+.hero {
+  &__advantages {
+    border-block: var(--border);
+
+    &-list {
+      @include tablet-above {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &-item {
+      --paddingX: 80px;
+
+      padding-block: 50px;
+
+      @include laptop {
+        --paddingX: 50px;
+
+        padding-block: 40px;
+      }
+
+      @include tablet-above {
+        &:not(:first-child) {
+          padding-left: var(--paddingX);
+        }
+
+        &:not(:last-child) {
+          padding-right: var(--paddingX);
+          border-right: var(--border);
+        }
+      }
+
+      @include tablet {
+        padding-block: 30px;
+
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+  }
+}

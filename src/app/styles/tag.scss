@@ -1,0 +1,16 @@
+@use "./helpers" as *;
+
+.tag {
+  @include fluid-text(20, 14);
+
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: var(--color-dark-20);
+
+  color: var(--color-light);
+  font-weight: 500;
+
+  @include laptop {
+    padding: 4px 8px;
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "blogCards": [
+    {
+      "id": "1",
+      "idBlogDetails": "1",
+      "image": "/images/blog/1.png",
+      "name": "John Techson",
+      "title": "The Quantum Leap in Computing",
+      "department": "Quantum Computing",
+      "description": "Explore the revolution in quantum computing, its applications, and its potential impact on various industries.",
+      "postDate": "2023-10-15",
+      "likes": 14001,
+      "isLike": true,
+      "discussions": 72,
+      "share": 18
+    },
+    {
+      "id": "2",
+      "idBlogDetails": "2",
+      "image": "/images/blog/2.png",
+      "name": "Sarah Ethicist",
+      "title": "The Ethical Dilemmas of AI",
+      "department": "AI Ethics",
+      "description": "A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.",
+      "postDate": "2023-11-05",
+      "likes": 102,
+      "isLike": true,
+      "discussions": 65,
+      "share": 11
+    },
+    {
+      "id": "3",
+      "idBlogDetails": "3",
+      "image": "/images/blog/3.png",
+      "name": "Astronomer X",
+      "title": "The Mars Colonization Challenge",
+      "department": "Space Exploration",
+      "description": "Exploring the technical and logistical challenges of human colonization on Mars.",
+      "postDate": "2023-12-10",
+      "likes": 10,
+      "isLike": false,
+      "discussions": 2,
+      "share": 15
+    },
+    {
+      "id": "4",
+      "idBlogDetails": "4",
+      "image": "/images/blog/2.png",
+      "name": "Dr. Emily Walker",
+      "title": "The Rise of Artificial Intelligence in Healthcare",
+      "department": "AI Ethics",
+      "description": "Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research.",
+      "postDate": "2023-10-17",
+      "likes": 24500,
+      "isLike": true,
+      "discussions": 15,
+      "share": 206
+    }
+  ],
+  "reviews": [
+    {
+      "image": "/images/blog/1.png",
+      "name": "Sarah Thompson",
+      "department": "San Francisco, USA",
+      "review": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.",
+      "rating": 5,
+      "id": "886e"
+    },
+    {
+      "image": "/images/blog/2.png",
+      "name": "Raj Patel",
+      "department": "Mumbai, India",
+      "review": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.",
+      "rating": 4,
+      "id": "32df"
+    },
+    {
+      "image": "/images/blog/3.png",
+      "name": "Emily Adams",
+      "department": "London, UK",
+      "review": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.",
+      "rating": 3,
+      "id": "3b60"
+    },
+    {
+      "image": "/images/blog/1.png",
+      "name": "Sarah Thompson",
+      "department": "San Francisco, USA",
+      "review": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.",
+      "rating": 5,
+      "id": "2bf6"
+    },
+    {
+      "image": "/images/blog/2.png",
+      "name": "Raj Patel",
+      "department": "Mumbai, India",
+      "review": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.",
+      "rating": 4,
+      "id": "d5b2"
+    },
+    {
+      "image": "/images/blog/3.png",
+      "name": "Emily Adams",
+      "department": "London, UK",
+      "review": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.",
+      "rating": 2,
+      "id": "61e6"
+    }
+  ],
+  "videos": [
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "AI in Healthcare",
+      "description": "Dr. Lisa Adams discusses how AI is revolutionizing healthcare, from diagnostic tools to patient care.",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "c47b"
+    },
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "AI Ethics",
+      "description": "Explore the ethical dilemmas and considerations surrounding AI with guest speaker Dr. Michael Turner.",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "32de"
+    },
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "Machine Learning Explained",
+      "description": "Dive into the intricacies of machine learning with AI expert Sarah Davis. In this episode",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "6be1"
+    },
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "AI and the Future of Work",
+      "description": "Dr. Olivia White joins John Parker to discuss the evolving role of AI in the workplace.",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "3b8a"
+    },
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "AI in Education",
+      "description": "Explore the role of AI in education as Emily Turner discusses how AI is transforming the learning experience.",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "9de9"
+    },
+    {
+      "src": "/video/example.mp4",
+      "poster": "/images/video/poster-1.jpg",
+      "title": "AI in Entertainment",
+      "description": "David Smith as they explore the influence of AI in the entertainment industry.",
+      "videoDuration": "00:30",
+      "link": "#",
+      "labelLink": "Listen Podcast",
+      "id": "5708"
+    }
+  ],
+  "news": [
+    {
+      "id": "ebt1",
+      "srcIcon": "/images/news/1.jpg",
+      "title": "Global Climate Summit Addresses Urgent Climate Action",
+      "description": "World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.",
+      "category": "Environment",
+      "publicationDate": "2023-10-10",
+      "author": "Jane Smith",
+      "link": "#",
+      "labelLink": "Read More",
+      "likes": 14001,
+      "isLike": true,
+      "share": 204
+    },
+    {
+      "id": "dfv3",
+      "srcIcon": "/images/news/2.jpg",
+      "title": "A Decisive Victory for Progressive Policies",
+      "category": "Politics",
+      "link": "#",
+      "labelLink": "Read More",
+      "likes": 2200,
+      "isLike": false,
+      "share": 60
+    },
+    {
+      "id": "kfr4",
+      "srcIcon": "/images/news/3.jpg",
+      "title": "Tech Giants Unveil Cutting-Edge AI Innovations",
+      "category": "Technology",
+      "link": "#",
+      "labelLink": "Read More",
+      "likes": 6001,
+      "isLike": true,
+      "share": 92
+    },
+    {
+      "id": "b4v3",
+      "srcIcon": "/images/news/4.jpg",
+      "title": "COVID-19 Variants",
+      "category": "Health",
+      "link": "#",
+      "labelLink": "Read More",
+      "likes": 10000,
+      "isLike": false,
+      "share": 124
+    }
+  ],
+  "blogDetails": [
+    {
+      "id": "4",
+      "srcBanner": "/images/blog-details/banner.jpg",
+      "title": "The Rise of Artificial Intelligence in Healthcare",
+      "intro": "Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research. In this blog post, we explore the profound impact of AI in healthcare, from revolutionizing diagnostic accuracy to enhancing patient outcomes.",
+      "titleContentItem1": "Artificial Intelligence (AI)",
+      "descriptionContentItem1": "Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology. /n Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology.",
+      "titleContentItem2": "Predictive Analytics and Disease Prevention",
+      "descriptionContentItem2": "One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening conditions. /n One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening conditions.",
+      "category": "Healthcare",
+      "author": "Dr. Emily Walker",
+      "publicationDate": "2023-10-17",
+      "readingTime": "10 Min",
+      "likes": 24499,
+      "isLike": false,
+      "discussions": 50,
+      "share": 206
+    }
+  ],
+  "messages": []
+}

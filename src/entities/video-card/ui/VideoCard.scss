@@ -1,0 +1,26 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 30px;
+
+  height: 100%;
+
+  @include laptop {
+    row-gap: 20px;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(10, 4);
+    flex-grow: 1;
+  }
+
+  &__player {
+    width: 100%;
+  }
+}
+
+.video-player__video--small {
+  height: fluid(290, 208);
+}

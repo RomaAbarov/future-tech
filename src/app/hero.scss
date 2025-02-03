@@ -1,0 +1,124 @@
+.hero {
+  &__main {
+    @include tablet-above {
+      display: grid;
+      grid-template-columns: 60% auto;
+      grid-template-areas:
+        "body    resources-preview"
+        "metrics resources-preview";
+    }
+  }
+
+  &__body {
+    grid-area: body;
+
+    padding-top: 150px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+
+    @include laptop {
+      padding-top: 100px;
+      padding-right: 40px;
+    }
+
+    @include tablet {
+      padding-right: 0;
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @include fluid-text(30, 18);
+
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    color: var(--color-dark-40);
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include mobile {
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__metrics {
+    grid-area: metrics;
+
+    @include tablet-above {
+      border-top: var(--border);
+    }
+
+    @include tablet {
+      &::before {
+        width: var(--100vw);
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+  }
+
+  &__resources-preview {
+    grid-area: resources-preview;
+
+    padding-left: 80px;
+    padding-bottom: 80px;
+
+    background: url("/images/resources-preview/bg.png") 0 0 / cover no-repeat;
+
+    @include laptop {
+      padding-left: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include tablet-above {
+      border-left: var(--border);
+    }
+
+    @include tablet {
+      width: var(--100vw);
+      margin-left: calc(var(--container-padding-x) * -1);
+      padding: 100px 40px 40px;
+      background-image: url("/images/resources-preview/bg_tablet.png");
+      background-size: contain;
+    }
+  }
+}
+
+.resources-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  row-gap: 30px;
+
+  @include laptop {
+    row-gap: 20px;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: 14px;
+
+    @include laptop {
+      row-gap: 6px;
+    }
+  }
+
+  &__button {
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+}

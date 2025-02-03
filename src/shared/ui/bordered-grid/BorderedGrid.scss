@@ -1,0 +1,132 @@
+.bordered-grid {
+  --columns: 1;
+  --itemPaddingY: #{fluid(80, 40)};
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &--2-cols {
+    --columns: 2;
+    --itemPaddingX: 80px;
+
+    @include laptop {
+      --itemPaddingX: 50px;
+    }
+
+    @include mobile-above {
+      .bordered-grid__item {
+        &:nth-child(odd) {
+          padding-right: var(--itemPaddingX);
+          border-right: var(--border);
+        }
+
+        &:nth-child(even) {
+          @include full-vw-centered-line(bottom, auto, 100%, 50%);
+
+          padding-left: var(--itemPaddingX);
+        }
+      }
+    }
+
+    @include mobile {
+      --columns: 1;
+
+      .bordered-grid__item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+
+  &--3-cols {
+    --columns: 3;
+    --itemPaddingX: 50px;
+
+    column-gap: calc(var(--itemPaddingX) * 2);
+
+    @include laptop {
+      --itemPaddingX: 40px;
+    }
+
+    @include tablet-above {
+      .bordered-grid__item {
+        position: relative;
+
+        &:nth-child(3n-2),  //1,4 col
+				&:nth-child(3n-1) {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--itemPaddingX));
+            width: 1px;
+            height: 100%;
+            background-color: var(--color-dark-15);
+          }
+        }
+
+        &:nth-child(3n-1) {
+          //2,5 col
+          @include full-vw-centered-line(bottom);
+        }
+      }
+    }
+
+    @include tablet {
+      --columns: 1;
+
+      .bordered-grid__item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+
+  &--4-cols {
+    --columns: 4;
+    --itemPaddingX: 50px;
+
+    column-gap: calc(var(--itemPaddingX) * 2);
+
+    @include laptop {
+      --itemPaddingX: 30px;
+    }
+
+    @include tablet-above {
+      .bordered-grid__item {
+        &:nth-child(4n-3),
+        &:nth-child(4n-2),
+        &:nth-child(4n-1) {
+          //1,2,3 cols
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--itemPaddingX));
+            width: 1px;
+            height: 100%;
+            background-color: var(--color-dark-15);
+          }
+        }
+      }
+    }
+
+    @include tablet {
+      --columns: 2;
+    }
+
+    @include mobile {
+      --columns: 1;
+    }
+
+    .bordered-grid__item {
+      &:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+
+  &__item {
+    padding-block: var(--itemPaddingY);
+  }
+}

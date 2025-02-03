@@ -1,0 +1,39 @@
+.report-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(30, 20);
+
+  height: 100%;
+
+  &__image {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    @include mobile {
+      height: 223px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 14px;
+
+    @include laptop {
+      row-gap: 10px;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include laptop {
+      column-gap: 10px;
+    }
+  }
+}
