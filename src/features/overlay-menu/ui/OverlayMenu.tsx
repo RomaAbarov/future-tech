@@ -11,8 +11,10 @@ export function OverlayMenu() {
   const [isShowBurgerMenu, setIsShowBurgerMenu] = useState(false);
 
   function onClick() {
-    document.documentElement.classList.toggle("is-lock");
-    setIsShowBurgerMenu(!isShowBurgerMenu);
+    if (isShowBurgerMenu) {
+      document.documentElement.classList.toggle("is-lock");
+      setIsShowBurgerMenu(!isShowBurgerMenu);
+    }
   }
 
   return (
@@ -27,7 +29,10 @@ export function OverlayMenu() {
           Contact Us
         </Link>
       </div>
-      <BurgerButton isActive={isShowBurgerMenu} onClick={onClick} />
+      <BurgerButton
+        isActive={isShowBurgerMenu}
+        setIsActive={setIsShowBurgerMenu}
+      />
     </>
   );
 }

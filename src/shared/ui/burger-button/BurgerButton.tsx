@@ -3,17 +3,20 @@ import "./BurgerButton.scss";
 
 type Props = {
   isActive: boolean;
-  onClick: () => void;
+  setIsActive: (isActive: boolean) => void;
 };
 
-export function BurgerButton({ isActive, onClick }: Props) {
+export function BurgerButton({ isActive, setIsActive }: Props) {
   return (
     <button
       className={clsx("burger-button visible-mobile", isActive && "is-active")}
       type="button"
       aria-label="open menu"
       title="open menu"
-      onClick={onClick}
+      onClick={() => {
+        document.documentElement.classList.toggle("is-lock");
+        setIsActive(!isActive);
+      }}
     >
       <span className="burger-button__line"></span>
       <span className="burger-button__line"></span>
