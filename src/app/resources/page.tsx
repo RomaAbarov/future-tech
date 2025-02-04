@@ -32,9 +32,7 @@ export default function page() {
           </div>
         </header>
         <div className="hero-alt__body">
-          <div className="container">
-            <Metrics cols={4} />
-          </div>
+          <Metrics cols={4} className="container" />
         </div>
       </section>
 

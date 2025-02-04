@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 import { Summary } from "@/features/summary";
 import { Actions } from "@/features/actions";
 import { TNewsCard } from "@/shared/types/newsCard";
 import "./NewsCard.scss";
+
+type Props = {
+  className?: string;
+};
 
 export function NewsCard({
   id,
@@ -17,9 +22,10 @@ export function NewsCard({
   likes,
   share,
   isLike,
-}: TNewsCard) {
+  className,
+}: TNewsCard & Props) {
   return (
-    <article className="news-card">
+    <article className={clsx("news-card", className)}>
       <Image
         src={srcIcon}
         alt=""

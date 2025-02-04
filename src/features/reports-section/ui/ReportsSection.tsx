@@ -135,13 +135,12 @@ export function ReportsSection() {
       <div className="section__body">
         <TabContentList currentTabIndex={currentTabIndex}>
           <Content>
-            <div className="container">
-              <BorderedGrid
-                cols={3}
-                data={reportCards}
-                Component={ReportCard}
-              />
-            </div>
+            <BorderedGrid
+              cols={3}
+              data={reportCards}
+              Component={ReportCard}
+              className="container"
+            />
           </Content>
         </TabContentList>
       </div>

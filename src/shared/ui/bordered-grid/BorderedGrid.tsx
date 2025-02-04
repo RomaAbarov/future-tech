@@ -6,18 +6,24 @@ type Props<T> = {
   cols?: number;
   data: T[];
   Component: FC<T>;
+  className?: string;
 };
 
 export function BorderedGrid<T extends { id: string }>({
   data,
   Component,
   cols,
+  className,
 }: Props<T>) {
   return (
     <ul
-      className={clsx("bordered-grid", {
-        [`bordered-grid--${cols}-cols`]: cols,
-      })}
+      className={clsx(
+        "bordered-grid",
+        {
+          [`bordered-grid--${cols}-cols`]: cols,
+        },
+        className
+      )}
     >
       {data.map((item) => (
         <li key={item.id} className="bordered-grid__item">

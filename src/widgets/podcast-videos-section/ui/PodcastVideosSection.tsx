@@ -7,8 +7,11 @@ export async function PodcastVideosSection() {
   const videos = (await response.json()) as TVideoCard[];
 
   return (
-    <div className="container">
-      <BorderedGrid data={videos} cols={3} Component={VideoCard} />
-    </div>
+    <BorderedGrid
+      data={videos}
+      cols={3}
+      Component={VideoCard}
+      className="container"
+    />
   );
 }

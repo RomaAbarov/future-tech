@@ -10,14 +10,14 @@ export async function NewsSection() {
   return (
     <ul className="list">
       <li className="list__item">
-        <div className="container">
-          <NewsCard {...news[0]} />
-        </div>
+        <NewsCard className="container" {...news[0]} />
       </li>
       <li className="list__item">
-        <div className="container">
-          <NewsList data={news.slice(1)} Component={NewsCard} />
-        </div>
+        <NewsList
+          data={news.slice(1)}
+          Component={NewsCard}
+          className="container"
+        />
       </li>
     </ul>
   );

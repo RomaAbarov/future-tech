@@ -101,19 +101,17 @@ export default function Home() {
           </div>
         </header>
         <div className="section__body">
-          <div className="container">
-            <ErrorBoundary
-              fallback={
-                <p className="h3">
-                  Failed to load reviews. Try reloading the page.
-                </p>
-              }
-            >
-              <Suspense fallback={<p className="h3">Loading...</p>}>
-                <Reviews />
-              </Suspense>
-            </ErrorBoundary>
-          </div>
+          <ErrorBoundary
+            fallback={
+              <p className="h3">
+                Failed to load reviews. Try reloading the page.
+              </p>
+            }
+          >
+            <Suspense fallback={<p className="h3">Loading...</p>}>
+              <Reviews />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </section>
     </main>
