@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" ",
+    "dev": "concurrently \"next dev\" \"json-server --port 3001 db.json\" ",
     "build": "next build",
     "start": "concurrently \"next start\" ",
     "lint": "next lint",
