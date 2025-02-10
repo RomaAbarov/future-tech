@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
+import clsx from "clsx";
 import { Input, InputLabel, Textarea } from "@/shared/ui";
 import { Alert, AlertDescription } from "@/shared/ui/shadcn/alert";
 import { AlertCircle } from "lucide-react";
@@ -16,7 +17,6 @@ import PhoneInput, {
   Value,
 } from "react-phone-number-input";
 import { createMessageAction } from "../model/actions";
-import clsx from "clsx";
 import "react-phone-number-input/style.css";
 import "./FeedbackForm.scss";
 
@@ -96,6 +96,8 @@ export function FeedbackForm() {
           value={value}
           onChange={setValue}
           defaultValue={state.inputs?.tel}
+          id="phoneNumber"
+          name="phoneNumber"
         />
         {/* <div className="field__body">
           <Select defaultValue={value} name="codeCountry">

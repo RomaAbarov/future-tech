@@ -1,13 +1,15 @@
+https://future-tech-psi.vercel.app
+
 Многостраничное приложение на Next15. Технологии в проекте:
 
-Home page: Главная страница с просмотром блогов, отзывов. Экспериментальный Tab(на примере shadcn), проставление лайка(useOptimistic). Работает последний блог секции all, id=4.
+Home page: Главная страница с просмотром блогов, отзывов. Экспериментальный Tab(на примере shadcn), проставление лайка(server actions, useOptimistic). Работает последний блог секции all, id=4.
 Blog page: Просмотр страница определенного блога(dynamic routes).
 News page: Просморт новостей.
 Podcast page: Просморт видео.
 Resources page: Просмотр ресурсов. Экспериментальный Tab
 Contacts page: Просморт контактов и отправка данных(server actions, zod). Кастомный аккордион.
 
-В качестве бд используется файл db.json(json-server). Для перевода px в rem postcss-pxtorem. Настройка svg - svgr/webpack.
+В качестве бд используется файл db.json(route handlers). Для перевода px в rem postcss-pxtorem. Настройка svg - svgr/webpack.
 
 ## Getting Started
 
