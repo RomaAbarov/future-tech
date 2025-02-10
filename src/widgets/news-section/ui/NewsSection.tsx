@@ -4,7 +4,7 @@ import { NewsList } from "@/shared/ui";
 import "@/shared/ui/list/List.scss";
 
 export async function NewsSection() {
-  const response = await fetch("http://localhost:3001/news");
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/news/api`);
   const news = (await response.json()) as TNewsCard[];
 
   return (

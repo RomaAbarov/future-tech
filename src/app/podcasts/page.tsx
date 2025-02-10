@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const cardData = [
   {
-    srcIcon: "./images/podcasts/icon-1.svg",
+    srcIcon: "/images/podcasts/icon-1.svg",
     title: "AI Revolution",
     rating: 5,
     extraSubtitle: "Host",
@@ -21,7 +21,7 @@ const cardData = [
     extraLinkLabel: "Listen Podcast",
   },
   {
-    srcIcon: "./images/podcasts/icon-2.svg",
+    srcIcon: "/images/podcasts/icon-2.svg",
     title: "AI Conversations",
     rating: 5,
     extraSubtitle: "Host",

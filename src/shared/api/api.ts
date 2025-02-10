@@ -7,22 +7,23 @@ import { notFound } from "next/navigation";
 
 function getUrl(id: string, pathName: string) {
   let url;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   switch (pathName) {
     case route.Home:
-      url = "http://localhost:3001/blogCards/";
+      url = baseUrl + "/api/blogCards/" + id;
       break;
     case route.News:
-      url = "http://localhost:3001/news/";
+      url = baseUrl + "/news/api/" + id;
       break;
     case `${route.Blog}/${id}`:
-      url = "http://localhost:3001/blogDetails/";
+      url = baseUrl + `${route.Blog}/${id}/api`;
       break;
     default:
       //на странице блога можно лайкать и блог и новости
       //id новостей и блогов не должны никогда совпадать
       if (id !== pathName.split("/").at(-1)) {
-        url = "http://localhost:3001/news/";
+        url = baseUrl + "/news/api/" + id;
       }
       break;
   }
@@ -34,8 +35,10 @@ export async function getLikes(id: string, pathName: string) {
   try {
     const url = getUrl(id, pathName);
 
-    const response = await fetch(url + id);
+    const response = await fetch(url!);
     const data = (await response.json()) as TActions;
+
+    console.log(url);
 
     return { likesCount: data.likes, isLike: data.isLike };
   } catch (error) {
@@ -50,7 +53,7 @@ export async function patchLikes(
 ) {
   const url = getUrl(id, pathName);
 
-  return fetch(url + id, {
+  return fetch(url!, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +63,7 @@ export async function patchLikes(
 }
 
 export async function createMessage(data: TMessageFormData) {
-  return fetch("http://localhost:3001/messages", {
+  return fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -70,7 +73,9 @@ export async function createMessage(data: TMessageFormData) {
 }
 
 export async function getBlogById(id: string): Promise<TBlogDetails> {
-  const response = await fetch("http://localhost:3001/blogDetails/" + id);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${id}/api`
+  );
 
   if (!response.ok) {
     notFound();
@@ -80,7 +85,9 @@ export async function getBlogById(id: string): Promise<TBlogDetails> {
 }
 
 export async function getSimilarNews(limit?: number): Promise<TNewsCard[]> {
-  const response = await fetch("http://localhost:3001/news?_limit=" + limit);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/news/api?_limit=` + limit
+  );
   const news = (await response.json()) as TNewsCard[];
 
   return news.map((n) => ({
