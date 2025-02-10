@@ -8,6 +8,8 @@ import { Reviews } from "@/features/reviews";
 import { AdvantagesSection } from "@/widgets/advantages-section";
 import "./hero";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main>

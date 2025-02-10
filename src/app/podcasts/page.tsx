@@ -6,6 +6,8 @@ import { PodcastVideosSection } from "@/widgets/podcast-videos-section";
 import { Video } from "@/features/video";
 import "@/shared/ui/list/List.scss";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Podcasts",
 };

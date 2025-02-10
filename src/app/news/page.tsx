@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { NewsSection } from "@/widgets/news-section";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "News",
 };
