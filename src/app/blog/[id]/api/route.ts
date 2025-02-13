@@ -8,6 +8,10 @@ export async function GET(
   const { id } = await params;
   const blog = db.blogDetails.find((item) => item.id === id);
 
+  if (!blog) {
+    return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+  }
+
   return NextResponse.json(blog);
 }
 

@@ -7,11 +7,28 @@ import { NewsCard } from "@/entities/news-card";
 import { getBlogById, getSimilarNews } from "@/shared/api/api";
 import formatString from "@/shared/lib/formatString";
 import ScrollToTop from "@/shared/lib/scrollToTop";
+import { TBlogCard } from "@/shared/types/blogCard";
 import "../blog.scss";
+
+export const revalidate = 600;
+export const dynamicParams = true;
 
 export const metadata: Metadata = {
   title: "Blog",
 };
+
+export async function generateStaticParams() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogCards`
+    );
+    const blogCards = (await response.json()) as TBlogCard[];
+
+    return blogCards.map((blog) => ({ id: blog.id }));
+  } catch (error) {
+    return [];
+  }
+}
 
 type Props = {
   params: Promise<{ id: string }>;
