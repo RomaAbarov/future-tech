@@ -63,7 +63,15 @@ export default function page() {
         <div className="hero-alt__body">
           <ul className="list">
             <li className="list__item">
-              <Card data={cardData[0]} titleSize="h2">
+              <Card
+                data={cardData[0]}
+                renderTitle={(title) => (
+                  <h2 className="card__preview-title h3">{title}</h2>
+                )}
+                renderExtraSubTitle={(extraSubtitle) => (
+                  <h3 className="card__cell-subtitle">{extraSubtitle}</h3>
+                )}
+              >
                 <div className="card__grid card__grid--3-cols">
                   <div className="card__cell card__cell--wide">
                     <ErrorBoundary
@@ -101,7 +109,15 @@ export default function page() {
               </Card>
             </li>
             <li className="list__item">
-              <Card data={cardData[1]} titleSize="h2">
+              <Card
+                data={cardData[1]}
+                renderTitle={(title) => (
+                  <h2 className="card__preview-title h3">{title}</h2>
+                )}
+                renderExtraSubTitle={(extraSubtitle) => (
+                  <h3 className="card__cell-subtitle">{extraSubtitle}</h3>
+                )}
+              >
                 <div className="card__grid card__grid--3-cols">
                   <div className="card__cell card__cell--wide">
                     <ErrorBoundary

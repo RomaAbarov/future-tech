@@ -7,11 +7,17 @@ import "./Card.scss";
 
 type Props = {
   data: TCard;
-  titleSize: "h2" | "h3";
   children?: ReactNode;
+  renderTitle: (title: string) => ReactNode;
+  renderExtraSubTitle?: (extraSubtitle: string) => ReactNode;
 };
 
-export function Card({ data, titleSize, children }: Props) {
+export function Card({
+  data,
+  children,
+  renderTitle,
+  renderExtraSubTitle,
+}: Props) {
   return (
     <div className="card container">
       <div className="card__preview">
@@ -24,12 +30,7 @@ export function Card({ data, titleSize, children }: Props) {
             height="80"
           />
           <div className="card__preview-info">
-            {titleSize === "h2" && (
-              <h2 className="card__preview-title h3">{data.title}</h2>
-            )}
-            {titleSize === "h3" && (
-              <h3 className="card__preview-title h3">{data.title}</h3>
-            )}
+            {renderTitle(data.title)}
             {data.rating && (
               <div className="card__rating-view">
                 <Rating rating={data.rating} />
@@ -55,12 +56,7 @@ export function Card({ data, titleSize, children }: Props) {
         {data.extraSubtitle && data.extraLink && (
           <div className="card__preview-extra">
             <div className="card__cell tile">
-              {titleSize === "h2" && (
-                <h3 className="card__cell-subtitle">{data.extraSubtitle}</h3>
-              )}
-              {titleSize === "h3" && (
-                <h4 className="card__cell-subtitle">{data.extraSubtitle}</h4>
-              )}
+              {renderExtraSubTitle && renderExtraSubTitle(data.extraSubtitle)}
               <p className="card__cell-description h6">
                 {data.extraDescription}
               </p>

@@ -1,12 +1,6 @@
 import { Metadata } from "next";
 import { ContactCard } from "@/entities/contact-card";
-import {
-  AccordionContent,
-  AccordionDetails,
-  AccordionGroup,
-  AccordionItem,
-  Socials,
-} from "@/shared/ui";
+import { Accordion, Socials } from "@/shared/ui";
 import { Card } from "@/entities/card";
 import { FeedbackForm } from "@/features/feedback-form";
 import "@/shared/ui/bordered-grid/BorderedGrid.scss";
@@ -79,22 +73,38 @@ export default function Contacts() {
         <div className="contacts__body">
           <div className="list">
             <div className="list__item">
-              <Card data={cardData[0]} titleSize="h2">
+              <Card
+                data={cardData[0]}
+                renderTitle={(title) => (
+                  <h2 className="card__preview-title h3">{title}</h2>
+                )}
+                renderExtraSubTitle={(extraSubtitle) => (
+                  <h3 className="card__cell-subtitle">{extraSubtitle}</h3>
+                )}
+              >
                 <FeedbackForm />
               </Card>
             </div>
             <div className="list__item">
-              <Card data={cardData[1]} titleSize="h2">
-                <AccordionGroup>
-                  <AccordionItem>
-                    <AccordionDetails name="faq" open>
+              <Card
+                data={cardData[1]}
+                renderTitle={(title) => (
+                  <h2 className="card__preview-title h3">{title}</h2>
+                )}
+                renderExtraSubTitle={(extraSubtitle) => (
+                  <h3 className="card__cell-subtitle">{extraSubtitle}</h3>
+                )}
+              >
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Details name="faq" open>
                       <h4 className="accordion__title h6">
                         <span role="term" aria-details="faq-1">
                           What is AI?
                         </span>
                       </h4>
-                    </AccordionDetails>
-                    <AccordionContent className="content" id="faq-1">
+                    </Accordion.Details>
+                    <Accordion.Content className="content" id="faq-1">
                       <div className="accordion__content-body">
                         <p>
                           AI stands for Artificial Intelligence, which refers to
@@ -103,17 +113,17 @@ export default function Contacts() {
                           learning, and decision-making.
                         </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionDetails name="faq">
+                    </Accordion.Content>
+                  </Accordion.Item>
+                  <Accordion.Item>
+                    <Accordion.Details name="faq">
                       <h4 className="accordion__title h6">
                         <span role="term" aria-details="faq-1">
                           How can I listen to your podcasts?
                         </span>
                       </h4>
-                    </AccordionDetails>
-                    <AccordionContent id="faq-2">
+                    </Accordion.Details>
+                    <Accordion.Content id="faq-2">
                       <div className="accordion__content-body">
                         <p>
                           AI stands for Artificial Intelligence, which refers to
@@ -122,17 +132,17 @@ export default function Contacts() {
                           learning, and decision-making.
                         </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionDetails name="faq">
+                    </Accordion.Content>
+                  </Accordion.Item>
+                  <Accordion.Item>
+                    <Accordion.Details name="faq">
                       <h4 className="accordion__title h6">
                         <span role="term" aria-details="faq-1">
                           Are your podcasts free to listen to?
                         </span>
                       </h4>
-                    </AccordionDetails>
-                    <AccordionContent id="faq-3">
+                    </Accordion.Details>
+                    <Accordion.Content id="faq-3">
                       <div className="accordion__content-body">
                         <p>
                           AI stands for Artificial Intelligence, which refers to
@@ -141,17 +151,17 @@ export default function Contacts() {
                           learning, and decision-making.
                         </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionDetails name="faq">
+                    </Accordion.Content>
+                  </Accordion.Item>
+                  <Accordion.Item>
+                    <Accordion.Details name="faq">
                       <h4 className="accordion__title h6">
                         <span role="term" aria-details="faq-1">
                           Can I download episodes to listen offline?
                         </span>
                       </h4>
-                    </AccordionDetails>
-                    <AccordionContent id="faq-4">
+                    </Accordion.Details>
+                    <Accordion.Content id="faq-4">
                       <div className="accordion__content-body">
                         <p>
                           AI stands for Artificial Intelligence, which refers to
@@ -160,17 +170,17 @@ export default function Contacts() {
                           learning, and decision-making.
                         </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionDetails name="faq">
+                    </Accordion.Content>
+                  </Accordion.Item>
+                  <Accordion.Item>
+                    <Accordion.Details name="faq">
                       <h4 className="accordion__title h6">
                         <span role="term" aria-details="faq-1">
                           How often do you release new episodes?
                         </span>
                       </h4>
-                    </AccordionDetails>
-                    <AccordionContent id="faq-5">
+                    </Accordion.Details>
+                    <Accordion.Content id="faq-5">
                       <div className="accordion__content-body">
                         <p>
                           AI stands for Artificial Intelligence, which refers to
@@ -179,9 +189,9 @@ export default function Contacts() {
                           learning, and decision-making.
                         </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </AccordionGroup>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </Accordion>
               </Card>
             </div>
           </div>
