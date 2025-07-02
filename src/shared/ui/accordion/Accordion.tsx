@@ -23,11 +23,11 @@ type PropsAccordionContent = {
   children: ReactNode;
 };
 
-export function AccordionGroup({ className, children }: PropsAccordionGroup) {
+function AccordionGroup({ className, children }: PropsAccordionGroup) {
   return <div className={clsx("accordion-group", className)}>{children}</div>;
 }
 
-export function AccordionItem({ className, children }: PropsAccordionItem) {
+function AccordionItem({ className, children }: PropsAccordionItem) {
   return (
     <div
       className={clsx(
@@ -41,7 +41,7 @@ export function AccordionItem({ className, children }: PropsAccordionItem) {
   );
 }
 
-export function AccordionDetails({
+function AccordionDetails({
   className,
   classNameSummary,
   children,
@@ -56,11 +56,7 @@ export function AccordionDetails({
   );
 }
 
-export function AccordionContent({
-  className,
-  id,
-  children,
-}: PropsAccordionContent) {
+function AccordionContent({ className, id, children }: PropsAccordionContent) {
   return (
     <div
       className={clsx("accordion__content", className)}
@@ -71,3 +67,9 @@ export function AccordionContent({
     </div>
   );
 }
+
+export const Accordion = Object.assign(AccordionGroup, {
+  Item: AccordionItem,
+  Details: AccordionDetails,
+  Content: AccordionContent,
+});

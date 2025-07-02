@@ -8,11 +8,6 @@ export { Socials } from "./soc1als/Socials";
 export { Input } from "./input/Input";
 export { InputLabel } from "./input-label/InputLabel";
 export { Textarea } from "./textarea/Textarea";
-export {
-  AccordionGroup,
-  AccordionItem,
-  AccordionDetails,
-  AccordionContent,
-} from "./accordion/Accordion";
 export { NewsList } from "./news-list/NewsList";
+export { Accordion } from "./accordion/Accordion";
 export { Tabs } from "./tabs";
