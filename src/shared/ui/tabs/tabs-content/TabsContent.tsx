@@ -21,6 +21,7 @@ export function TabsContent({
       id={id}
       aria-labelledby={ariaLabelledby}
       tabIndex={0}
+      hidden={!isActiveTab}
     >
       {children}
     </div>

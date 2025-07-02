@@ -29,7 +29,7 @@ export function TabsButton({
       id={id}
       role="tab"
       aria-controls={ariaControls}
-      aria-selected={isActiveTab ? "true" : "false"}
+      aria-selected={isActiveTab}
       tabIndex={isActiveTab ? 0 : -1}
       onClick={onClick}
     >

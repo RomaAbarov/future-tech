@@ -1,20 +1,21 @@
 "use client";
 
+import { Tabs } from "@/shared/ui";
+import { Tab } from "@/shared/ui/tabs/tab/Tab";
 import { FallbackProps } from "react-error-boundary";
-import { Tab, TabButtonsList, TabContentList, Tabs } from "@/shared/ui";
 
 export function ErrorTabSection({ resetErrorBoundary }: FallbackProps) {
   return (
     <Tabs ariaLabelledBy="blog-category-title">
-      <TabButtonsList>
-        <Tab>All</Tab>
-        <Tab>Quantum Computing</Tab>
-        <Tab>AI Ethics</Tab>
-        <Tab>Space Exploration</Tab>
-        <Tab>Biotechnology</Tab>
+      <Tabs.ButtonsList>
+        <Tabs.Tab>All</Tabs.Tab>
+        <Tabs.Tab>Quantum Computing</Tabs.Tab>
+        <Tabs.Tab>AI Ethics</Tabs.Tab>
+        <Tabs.Tab>Space Exploration</Tabs.Tab>
+        <Tabs.Tab>Biotechnology</Tabs.Tab>
         <Tab>Renewable Energy</Tab>
-      </TabButtonsList>
-      <TabContentList>
+      </Tabs.ButtonsList>
+      <Tabs.ContentList>
         <div className="error container">
           <span className="h3">Failed to load posts.</span>
           <button
@@ -25,7 +26,7 @@ export function ErrorTabSection({ resetErrorBoundary }: FallbackProps) {
             Try again
           </button>
         </div>
-      </TabContentList>
+      </Tabs.ContentList>
     </Tabs>
   );
 }
