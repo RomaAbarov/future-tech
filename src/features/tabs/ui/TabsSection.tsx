@@ -11,17 +11,22 @@ export async function TabsSection() {
 
   return (
     <Tabs>
-      <h3 className="visually-hidden" id="blog-category-title">
-        Blog category
-      </h3>
-      <Tabs.ButtonsList ariaLabelledBy="blog-category-title">
-        <Tabs.Tab>All</Tabs.Tab>
-        <Tabs.Tab>Quantum Computing</Tabs.Tab>
-        <Tabs.Tab>AI Ethics</Tabs.Tab>
-        <Tabs.Tab>Space Exploration</Tabs.Tab>
-        <Tabs.Tab>Biotechnology</Tabs.Tab>
-        <Tabs.Tab>Renewable Energy</Tabs.Tab>
-      </Tabs.ButtonsList>
+      <header className="tabs__header">
+        <h3 className="visually-hidden" id="blog-category-title">
+          Blog category
+        </h3>
+        <Tabs.ButtonsList
+          className="container"
+          ariaLabelledBy="blog-category-title"
+        >
+          <Tabs.Tab>All</Tabs.Tab>
+          <Tabs.Tab>Quantum Computing</Tabs.Tab>
+          <Tabs.Tab>AI Ethics</Tabs.Tab>
+          <Tabs.Tab>Space Exploration</Tabs.Tab>
+          <Tabs.Tab>Biotechnology</Tabs.Tab>
+          <Tabs.Tab>Renewable Energy</Tabs.Tab>
+        </Tabs.ButtonsList>
+      </header>
 
       <Tabs.ContentList>
         <Tabs.Content>

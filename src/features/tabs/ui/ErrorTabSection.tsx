@@ -6,8 +6,8 @@ import { FallbackProps } from "react-error-boundary";
 
 export function ErrorTabSection({ resetErrorBoundary }: FallbackProps) {
   return (
-    <Tabs ariaLabelledBy="blog-category-title">
-      <Tabs.ButtonsList>
+    <Tabs>
+      <Tabs.ButtonsList ariaLabelledBy="blog-category-title">
         <Tabs.Tab>All</Tabs.Tab>
         <Tabs.Tab>Quantum Computing</Tabs.Tab>
         <Tabs.Tab>AI Ethics</Tabs.Tab>
