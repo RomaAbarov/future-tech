@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PersonCard } from "@/shared/ui";
 import { Actions } from "@/features/actions";
 import { TBlogCard } from "@/shared/types/blogCard";
-import formatDate from "@/shared/lib/formatDate";
+import formatDate from "@/shared/utils/formatDate";
 import { route } from "@/shared/router/routes";
 import "./BlogCard.scss";
 

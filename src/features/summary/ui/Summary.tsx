@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import formatDate from "@/shared/lib/formatDate";
+import formatDate from "@/shared/utils/formatDate";
 import "./Summary.scss";
 
 type Props = {

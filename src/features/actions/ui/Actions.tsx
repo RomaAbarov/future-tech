@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { TActions } from "@/shared/types/TActions";
 import { Icon } from "@/features/icon";
 import { addLike } from "../model/actions";
-import { formatLikes } from "@/shared/lib/formatLikes";
+import { formatLikes } from "@/shared/utils/formatLikes";
 import "./Actions.scss";
 
 export function Actions({ id, likes, discussions, isLike, share }: TActions) {
