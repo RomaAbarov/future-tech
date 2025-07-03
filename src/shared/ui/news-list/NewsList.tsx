@@ -31,7 +31,7 @@ export function NewsList<T extends { id: string }>({
       <ul className="news__list">
         {data.map((item) => (
           <li key={item.id} className="news__item">
-            <Component key={item.id} {...item} />
+            <Component {...item} />
           </li>
         ))}
       </ul>
