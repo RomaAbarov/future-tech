@@ -1,7 +1,8 @@
 "use server";
 
-import { getLikes, patchLikes } from "@/shared/api/api";
 import { revalidatePath } from "next/cache";
+import { getLikes } from "../api/getLikes";
+import { patchLikes } from "../api/patchLikes";
 
 type Props = {
   id: string;
