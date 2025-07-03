@@ -14,7 +14,6 @@ import { TabsButton } from "../tabs-button/TabsButton";
 import clsx from "clsx";
 
 type Props = {
-  currentTabIndex?: number;
   children: ReactNode;
 };
 
@@ -38,8 +37,6 @@ function TabContentList({ children }: Props) {
   return (
     <div className="tabs__body">
       {Children.map(children, (child, index) => {
-        console.log(child);
-
         return (
           <TabsContent
             key={index}
@@ -119,29 +116,27 @@ function TabButtonsList({ children, className, ariaLabelledBy }: ListProps) {
   }
 
   return (
-    <header className="tabs__header">
-      <div
-        className={clsx("tabs__buttons container", className)}
-        role="tablist"
-        aria-labelledby={ariaLabelledBy}
-        onKeyDown={onKeyDown}
-      >
-        {buttons.map((label, index) => (
-          <TabsButton
-            key={index}
-            ref={(el: HTMLButtonElement | null) => {
-              buttonsRef.current[index] = el;
-            }}
-            id={`tab-${index}`}
-            isActiveTab={index === currentTabIndex}
-            ariaControls={`tabpanel-${index}`}
-            onClick={() => setCurrentTabIndex(index)}
-          >
-            {label}
-          </TabsButton>
-        ))}
-      </div>
-    </header>
+    <div
+      className={clsx("tabs__buttons", className)}
+      role="tablist"
+      aria-labelledby={ariaLabelledBy}
+      onKeyDown={onKeyDown}
+    >
+      {buttons.map((label, index) => (
+        <TabsButton
+          key={index}
+          ref={(el: HTMLButtonElement | null) => {
+            buttonsRef.current[index] = el;
+          }}
+          id={`tab-${index}`}
+          isActiveTab={index === currentTabIndex}
+          ariaControls={`tabpanel-${index}`}
+          onClick={() => setCurrentTabIndex(index)}
+        >
+          {label}
+        </TabsButton>
+      ))}
+    </div>
   );
 }
 

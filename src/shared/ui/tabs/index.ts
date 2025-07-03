@@ -7,3 +7,5 @@ export const Tabs = Object.assign(TabsComponent, {
   Tab: Tab,
   Content: Content,
 });
+
+export { TabsButton } from "./tabs-button/TabsButton";
