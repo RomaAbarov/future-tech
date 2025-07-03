@@ -1,11 +1,10 @@
 import { NewsCard } from "@/entities/news-card";
-import { TNewsCard } from "@/shared/types/newsCard";
 import { NewsList } from "@/shared/ui";
+import { useNews } from "../api/useNews";
 import "@/shared/ui/list/List.scss";
 
 export async function NewsSection() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/news/api`);
-  const news = (await response.json()) as TNewsCard[];
+  const news = await useNews();
 
   return (
     <ul className="list">

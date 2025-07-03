@@ -1,13 +1,9 @@
 import { BlogCard } from "@/entities/blog-card";
-import { TBlogCard } from "@/shared/types/blogCard";
 import { List, Tabs } from "@/shared/ui";
+import { useBlogCards } from "../api/useBlogCards";
 
 export async function TabsSection() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogCards`
-  );
-
-  const blogCards = (await response.json()) as TBlogCard[];
+  const blogCards = await useBlogCards();
 
   return (
     <Tabs>

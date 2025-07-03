@@ -1,6 +1,6 @@
 "use server";
 
-import { createMessage } from "@/shared/api/api";
+import { createMessage } from "../api/createMessage";
 import { schemaCreateMessage } from "./schema";
 import { FormResult, TMessageFormData } from "./types";
 import { Value } from "react-phone-number-input";

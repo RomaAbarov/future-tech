@@ -1,11 +1,8 @@
 import { VideoPlayer } from "@/features/video-player";
-import { TVideoCard } from "@/shared/types/videoPlayer";
+import { useVideos } from "@/shared/api/video/useVideos";
 
 export async function Video() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/podcasts/api`
-  );
-  const videos = (await response.json()) as TVideoCard[];
+  const videos = await useVideos();
 
   return (
     <VideoPlayer
